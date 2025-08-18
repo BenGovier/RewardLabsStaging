@@ -1,9 +1,9 @@
 import { Breadcrumbs } from "@/components/marketing/Breadcrumbs"
-import { Hero } from "@/components/marketing/Hero"
 import { StepRow } from "@/components/marketing/StepRow"
 import { FAQ } from "@/components/marketing/FAQ"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 
 const steps = [
   {
@@ -48,10 +48,28 @@ export default function EcommercePage() {
         <Breadcrumbs items={[{ label: "Industries", href: "/industries" }, { label: "Ecommerce" }]} />
       </div>
 
-      <Hero
-        title="Boost sales and customer acquisition for online stores"
-        subtitle="Prize draw campaigns help ecommerce businesses capture leads, increase average order values, and build customer loyalty."
-      />
+      <div className="bg-gradient-to-b from-blue-50 to-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="mb-8 flex justify-center">
+              <Image
+                src="/marketing/ecommerce.png"
+                alt="Ecommerce illustration"
+                width={200}
+                height={150}
+                className="max-w-full h-auto"
+              />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Boost sales and customer acquisition for online stores
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Prize draw campaigns help ecommerce businesses capture leads, increase average order values, and build
+              customer loyalty.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

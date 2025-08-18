@@ -49,6 +49,8 @@ export default function LeadCapturePage() {
       <Hero
         title="Turn anonymous visitors into qualified leads"
         subtitle="Capture high-quality email addresses from website traffic with engaging prize draws that visitors actually want to enter."
+        imageSrc="/marketing/hero-solutions.png"
+        imageAlt="Lead capture solution"
       />
 
       <div className="py-16">

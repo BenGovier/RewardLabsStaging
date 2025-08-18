@@ -11,7 +11,18 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Home, Users, TrendingUp, BookOpen, Briefcase, Settings, LogOut, BarChart3 } from "lucide-react"
+import {
+  Home,
+  Users,
+  TrendingUp,
+  BookOpen,
+  Briefcase,
+  Settings,
+  LogOut,
+  BarChart3,
+  Target,
+  Building,
+} from "lucide-react"
 import Link from "next/link"
 
 export function Navigation() {
@@ -41,8 +52,8 @@ export function Navigation() {
     { href: "/sales", label: "Sales", icon: TrendingUp, show: true },
     { href: "/training", label: "Training", icon: BookOpen, show: true },
     { href: "/sales-tools", label: "Sales Tools", icon: Briefcase, show: true },
-    { href: "/solutions", label: "Solutions", icon: Briefcase, show: isStaging },
-    { href: "/industries", label: "Industries", icon: Users, show: isStaging },
+    { href: "/solutions", label: "Solutions", icon: Target, show: isStaging },
+    { href: "/industries", label: "Industries", icon: Building, show: isStaging },
     { href: "/admin/dashboard", label: "Dashboard", icon: BarChart3, show: isAdmin },
     { href: "/admin/reps", label: "Manage Reps", icon: Users, show: isAdmin },
   ]
@@ -67,6 +78,7 @@ export function Navigation() {
                       ? "bg-blue-100 text-blue-700"
                       : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                   }`}
+                  aria-current={pathname === item.href ? "page" : undefined}
                 >
                   <item.icon className="h-4 w-4" />
                   <span>{item.label}</span>

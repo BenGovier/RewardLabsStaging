@@ -1,10 +1,12 @@
 import Link from "next/link"
 
 export function SiteFooter() {
+  const isStaging = process.env.NEXT_PUBLIC_STAGING === "1"
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className={`grid grid-cols-1 ${isStaging ? "md:grid-cols-6" : "md:grid-cols-4"} gap-8`}>
           {/* Company */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Raffily</h3>
@@ -39,6 +41,64 @@ export function SiteFooter() {
               </li>
             </ul>
           </div>
+
+          {/* Solutions - Staging Only */}
+          {isStaging && (
+            <div>
+              <h4 className="font-semibold mb-4">Solutions</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>
+                  <Link href="/solutions/lead-capture" className="hover:text-white">
+                    Lead Capture
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/solutions/launch-campaigns" className="hover:text-white">
+                    Launch Campaigns
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/solutions/reactivate-list" className="hover:text-white">
+                    List Reactivation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/solutions/popups-widgets" className="hover:text-white">
+                    Popups & Widgets
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
+
+          {/* Industries - Staging Only */}
+          {isStaging && (
+            <div>
+              <h4 className="font-semibold mb-4">Industries</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>
+                  <Link href="/industries/ecommerce" className="hover:text-white">
+                    Ecommerce
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/industries/saas" className="hover:text-white">
+                    SaaS
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/industries/marketing-agencies" className="hover:text-white">
+                    Marketing Agencies
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/industries/local-business" className="hover:text-white">
+                    Local Business
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
 
           {/* Support */}
           <div>

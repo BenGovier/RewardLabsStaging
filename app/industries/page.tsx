@@ -30,6 +30,8 @@ export default function IndustriesPage() {
       <Hero
         title="Who uses Reward Labs?"
         subtitle="Prize draw campaigns work across industries. See how businesses like yours are growing with engaging prize campaigns."
+        imageSrc="/marketing/hero-industries.png"
+        imageAlt="Industries illustration"
       />
 
       <div className="py-16">

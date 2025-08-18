@@ -39,6 +39,8 @@ export default function SolutionsPage() {
       <Hero
         title="Solutions that turn traffic into growth"
         subtitle="Plug‑and‑play prize draws that capture emails, grow lists, and re‑engage customers."
+        imageSrc="/marketing/hero-solutions.png"
+        imageAlt="Solutions illustration"
       />
 
       <div className="py-16">

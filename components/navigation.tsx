@@ -23,6 +23,7 @@ export function Navigation() {
 
   const isAdmin = session.user.role === "admin"
   const isRep = session.user.role === "rep"
+  const isStaging = process.env.NEXT_PUBLIC_STAGING === "1"
 
   const getInitials = (name: string) => {
     return (
@@ -40,6 +41,8 @@ export function Navigation() {
     { href: "/sales", label: "Sales", icon: TrendingUp, show: true },
     { href: "/training", label: "Training", icon: BookOpen, show: true },
     { href: "/sales-tools", label: "Sales Tools", icon: Briefcase, show: true },
+    { href: "/solutions", label: "Solutions", icon: Briefcase, show: isStaging },
+    { href: "/industries", label: "Industries", icon: Users, show: isStaging },
     { href: "/admin/dashboard", label: "Dashboard", icon: BarChart3, show: isAdmin },
     { href: "/admin/reps", label: "Manage Reps", icon: Users, show: isAdmin },
   ]

@@ -8,8 +8,8 @@ const nextConfig = {
   },
   async rewrites() {
     return [
-      // Redirect root to marketing home page
-      { source: '/', destination: '/(marketing)' },
+      // Temporarily redirect root to existing working page
+      { source: '/', destination: '/business/dashboard' },
     ];
   },
   experimental: {

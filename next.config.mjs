@@ -6,13 +6,17 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  images: {
-    unoptimized: true,
-  },
   async rewrites() {
     return [
-      { source: '/', destination: '/solutions' }
+      { source: '/', destination: '/solutions' },
     ];
+  },
+  experimental: {
+    serverComponentsExternalPackages: ['mongodb'],
+  },
+  images: {
+    domains: ['blob.v0.dev'],
+    unoptimized: true,
   },
 };
 

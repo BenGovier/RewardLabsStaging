@@ -1,5 +1,5 @@
 import type React from "react"
-import MarketingNav from "@/components/marketing/MarketingNav"
+import { MarketingNav } from "@/components/marketing/MarketingNav"
 
 export default function MarketingLayout({
   children,

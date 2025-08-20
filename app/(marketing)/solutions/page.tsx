@@ -17,7 +17,7 @@ export default function SolutionsPage() {
             </p>
             <div className="flex justify-center mb-12">
               <Image
-                src="/marketing/hero-solutions.svg"
+                src="/marketing/hero-solutions.png"
                 alt="Solutions illustration"
                 width={400}
                 height={300}

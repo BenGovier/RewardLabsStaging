@@ -55,7 +55,7 @@ export default function SaaSIndustryPage() {
             </div>
             <div className="flex justify-center">
               <Image
-                src="/marketing/saas.svg"
+                src="/marketing/saas.png"
                 alt="SaaS illustration"
                 width={400}
                 height={300}

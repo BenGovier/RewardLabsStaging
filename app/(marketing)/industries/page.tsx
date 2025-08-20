@@ -15,7 +15,7 @@ export default function IndustriesPage() {
             </p>
             <div className="flex justify-center mb-12">
               <Image
-                src="/marketing/hero-industries.png"
+                src="/placeholder.svg?height=300&width=400"
                 alt="Industries illustration"
                 width={400}
                 height={300}

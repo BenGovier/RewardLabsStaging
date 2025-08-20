@@ -79,9 +79,6 @@ export function MarketingNav() {
                 )}
               </div>
 
-              <Link href="/resources" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">
-                Resources
-              </Link>
               <Link href="/pricing" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">
                 Pricing
               </Link>
@@ -135,13 +132,6 @@ export function MarketingNav() {
                 onClick={() => setIsOpen(false)}
               >
                 Industries
-              </Link>
-              <Link
-                href="/resources"
-                className="text-gray-900 hover:text-blue-600 block px-3 py-2 text-base font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Resources
               </Link>
               <Link
                 href="/pricing"

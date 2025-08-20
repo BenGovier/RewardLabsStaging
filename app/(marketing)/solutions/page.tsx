@@ -17,7 +17,7 @@ export default function SolutionsPage() {
             </p>
             <div className="flex justify-center mb-12">
               <Image
-                src="/marketing/hero-solutions.png"
+                src="/placeholder.svg?height=300&width=400"
                 alt="Solutions illustration"
                 width={400}
                 height={300}
@@ -131,10 +131,10 @@ export default function SolutionsPage() {
             See how our solutions can transform your business in just 24 hours.
           </p>
           <Link
-            href="/how-it-works"
+            href="/signup/business"
             className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md text-lg font-medium"
           >
-            See how it works <ArrowRight className="ml-2 h-5 w-5" />
+            Get Started <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </div>
       </section>

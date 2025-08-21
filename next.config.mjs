@@ -8,8 +8,7 @@ const nextConfig = {
   },
   async rewrites() {
     return [
-      // Temporarily redirect root to existing working page
-      { source: '/', destination: '/business/dashboard' },
+      // No rewrites needed - (marketing) route group will handle root path
     ];
   },
   experimental: {

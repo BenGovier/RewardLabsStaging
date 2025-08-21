@@ -2,158 +2,112 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Menu, X, Play, LogIn } from "lucide-react"
 
 export function MarketingNav() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isIndustriesOpen, setIsIndustriesOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-white shadow-sm border-b">
+    <nav className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-blue-600">
-              Reward Labs
+          <div className="flex items-center">
+            <Link href="/">
+              <img src="/images/reward-labs-logo-new.png" alt="Reward Labs" className="h-16 w-auto" />
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <Link href="/" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">
-                Home
-              </Link>
-              <Link href="/solutions" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">
-                Solutions
-              </Link>
-
-              {/* Industries Dropdown */}
-              <div className="relative">
-                <button
-                  onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
-                  className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium flex items-center"
-                >
-                  Industries
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
-                {isIndustriesOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border z-50">
-                    <Link
-                      href="/industries"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                      onClick={() => setIsIndustriesOpen(false)}
-                    >
-                      All Industries
-                    </Link>
-                    <Link
-                      href="/industries/ecommerce"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                      onClick={() => setIsIndustriesOpen(false)}
-                    >
-                      Ecommerce
-                    </Link>
-                    <Link
-                      href="/industries/saas"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                      onClick={() => setIsIndustriesOpen(false)}
-                    >
-                      SaaS
-                    </Link>
-                    <Link
-                      href="/industries/marketing-agencies"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                      onClick={() => setIsIndustriesOpen(false)}
-                    >
-                      Marketing Agencies
-                    </Link>
-                    <Link
-                      href="/industries/local-business"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                      onClick={() => setIsIndustriesOpen(false)}
-                    >
-                      Local Business
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              <Link href="/pricing" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">
-                Pricing
-              </Link>
-            </div>
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-12">
+            <a
+              href="#how-it-works"
+              className="text-[#374151] hover:text-[#111827] font-semibold transition-colors text-lg hover:scale-105 duration-200"
+            >
+              How it Works
+            </a>
+            <a
+              href="#benefits"
+              className="text-[#374151] hover:text-[#111827] font-semibold transition-colors text-lg hover:scale-105 duration-200"
+            >
+              Benefits
+            </a>
+            <a
+              href="#testimonials"
+              className="text-[#374151] hover:text-[#111827] font-semibold transition-colors text-lg hover:scale-105 duration-200"
+            >
+              Success Stories
+            </a>
+            <Link
+              href="/demo"
+              className="text-[#374151] hover:text-[#111827] font-semibold transition-colors text-lg hover:scale-105 duration-200 flex items-center"
+            >
+              <Play className="w-4 h-4 mr-2" />
+              Demo (0:45)
+            </Link>
           </div>
 
-          {/* Desktop CTA Buttons */}
-          <div className="hidden md:block">
-            <div className="ml-4 flex items-center space-x-4">
-              <Link href="/auth/signin" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">
-                Login
-              </Link>
-              <Link
-                href="/signup/business"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium"
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Link href="/auth/signin">
+              <Button
+                variant="ghost"
+                className="font-semibold text-lg px-6 py-3 h-auto text-[#374151] hover:text-[#111827] hover:scale-105 transition-all duration-200"
               >
+                <LogIn className="w-4 h-4 mr-2" />
+                Sign In
+              </Button>
+            </Link>
+            <Link href="/register-interest">
+              <Button className="bg-[#009FFD] hover:bg-[#007ACC] font-semibold text-lg px-6 py-3 shadow-lg h-auto text-white hover:scale-105 transition-all duration-200 hover:shadow-xl">
                 Get Started
-              </Link>
-            </div>
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-900 hover:text-blue-600 p-2">
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+            <Button variant="ghost" size="sm" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              {mobileMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
+            </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t">
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden py-6 border-t border-gray-100">
+            <div className="flex flex-col space-y-4">
+              <a href="#how-it-works" className="text-[#374151] hover:text-[#111827] font-semibold py-2 text-lg">
+                How it Works
+              </a>
+              <a href="#benefits" className="text-[#374151] hover:text-[#111827] font-semibold py-2 text-lg">
+                Benefits
+              </a>
+              <a href="#testimonials" className="text-[#374151] hover:text-[#111827] font-semibold py-2 text-lg">
+                Success Stories
+              </a>
               <Link
-                href="/"
-                className="text-gray-900 hover:text-blue-600 block px-3 py-2 text-base font-medium"
-                onClick={() => setIsOpen(false)}
+                href="/demo"
+                className="justify-start text-[#374151] hover:text-[#111827] font-semibold text-lg p-2 flex items-center"
               >
-                Home
+                <Play className="w-4 h-4 mr-2" />
+                Demo (0:45)
               </Link>
-              <Link
-                href="/solutions"
-                className="text-gray-900 hover:text-blue-600 block px-3 py-2 text-base font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Solutions
-              </Link>
-              <Link
-                href="/industries"
-                className="text-gray-900 hover:text-blue-600 block px-3 py-2 text-base font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Industries
-              </Link>
-              <Link
-                href="/pricing"
-                className="text-gray-900 hover:text-blue-600 block px-3 py-2 text-base font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Pricing
-              </Link>
-              <div className="border-t pt-4 mt-4">
-                <Link
-                  href="/auth/signin"
-                  className="text-gray-900 hover:text-blue-600 block px-3 py-2 text-base font-medium"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Login
+              <div className="flex flex-col space-y-3 pt-4">
+                <Link href="/auth/signin">
+                  <Button
+                    variant="outline"
+                    className="w-full text-lg py-3 h-auto border-[#009FFD] text-[#009FFD] hover:bg-[#009FFD] hover:text-white bg-transparent"
+                  >
+                    <LogIn className="w-4 h-4 mr-2" />
+                    Sign In
+                  </Button>
                 </Link>
-                <Link
-                  href="/signup/business"
-                  className="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-md text-base font-medium mt-2"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Get Started
+                <Link href="/register-interest">
+                  <Button className="w-full bg-[#009FFD] hover:bg-[#007ACC] text-lg py-3 h-auto text-white">
+                    Get Started
+                  </Button>
                 </Link>
               </div>
             </div>
